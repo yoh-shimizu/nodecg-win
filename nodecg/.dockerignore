@@ -1,0 +1,10 @@
+*
+!lib
+!src
+!schemas
+!build
+!bower.json
+!index.js
+!package.json
+!package-lock.json
+!types
