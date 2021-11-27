@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <link rel="stylesheet" href="css/splatoon_scoreboard.css" type="text/css" charset="utf-8">
+        <meta charset="UTF-8">
+        <title>splatoon_scoreboard_vertical</title>
+        <script src="js/anime.min.js"></script>
+    </head>
+    <body>
+        <div id="board">
+            <div id="round_vertical"></div>
+            <div id="team1_score" class="score"></div>
+            <div id="team1_name_vertical" class="team-name-vertical blue-color"></div>
+            <div id="player_one" class="blue-player-name blue-color"></div>
+            <div id="player_two" class="blue-player-name blue-color"></div>
+            <div id="player_three" class="blue-player-name blue-color"></div>
+            <div id="player_four" class="blue-player-name blue-color"></div>
+            <div id="team2_score" class="score"></div>
+            <div id="team2_name_vertical" class="team-name-vertical blue-color"></div>
+            <div id="player_five" class="blue-player-name blue-color"></div>
+            <div id="player_six" class="blue-player-name blue-color"></div>
+            <div id="player_seven" class="blue-player-name blue-color"></div>
+            <div id="player_eight" class="blue-player-name blue-color"></div>
+        </div>
+    </body>
+
+    
+  <script>
+
+    const board = document.getElementById("board");
+
+    const round = document.getElementById("round_vertical");
+    const roundView = nodecg.Replicant("title");
+    roundView.on("change", newValue => {
+      round.innerText = newValue;
+    });
+
+    const team1 = document.getElementById("team1_name_vertical");
+    const t1nameView = nodecg.Replicant("t1name");
+    t1nameView.on("change", newValue => {
+      team1.innerText = newValue;
+    });
+
+    const team2 = document.getElementById("team2_name_vertical");
+    const t2nameView = nodecg.Replicant("t2name");
+    t2nameView.on("change", newValue => {
+      team2.innerText = newValue;
+    });
+
+    const player_one = document.getElementById("player_one");
+    const p1nameView = nodecg.Replicant("p1name");
+    p1nameView.on("change", newValue => {
+      player_one.innerText = newValue;
+    });
+  
+    const player_two = document.getElementById("player_two");
+    const p2nameView = nodecg.Replicant("p2name");
+    p2nameView.on("change", newValue => {
+      player_two.innerText = newValue;
+    });
+
+    const player_three = document.getElementById("player_three");
+    const p3nameView = nodecg.Replicant("p3name");
+    p3nameView.on("change", newValue => {
+      player_three.innerText = newValue;
+    });
+
+    const player_four = document.getElementById("player_four");
+    const p4nameView = nodecg.Replicant("p4name");
+    p4nameView.on("change", newValue => {
+      player_four.innerText = newValue;
+    });
+
+    const player_five = document.getElementById("player_five");
+    const p5nameView = nodecg.Replicant("p5name");
+    p5nameView.on("change", newValue => {
+      player_five.innerText = newValue;
+    });
+
+    const player_six = document.getElementById("player_six");
+    const p6nameView = nodecg.Replicant("p6name");
+    p6nameView.on("change", newValue => {
+      player_six.innerText = newValue;
+    });
+
+    const player_seven = document.getElementById("player_seven");
+    const p7nameView = nodecg.Replicant("p7name");
+    p7nameView.on("change", newValue => {
+      player_seven.innerText = newValue;
+    });
+
+    const player_eight = document.getElementById("player_eight");
+    const p8nameView = nodecg.Replicant("p8name");
+    p8nameView.on("change", newValue => {
+      player_eight.innerText = newValue;
+    });
+  
+    const team1_score = document.getElementById('team1_score')
+    const count1_view = nodecg.Replicant('count1', { defaultValue: 0 })
+    count1_view.on('change', newValue => {
+      team1_score.innerText = newValue
+    })
+  
+    const team2_score = document.getElementById('team2_score')
+    const count2_view = nodecg.Replicant('count2', { defaultValue: 0 })
+    count2_view.on('change', newValue => {
+      team2_score.innerText = newValue
+    })
+
+    const titlefs_view = nodecg.Replicant('titlefs', { defaultValue: 28 })
+    titlefs_view.on('change', newValue => {
+      round.style.fontSize = newValue+'px'
+    })
+    
+    const tfontsize_vertical_view = nodecg.Replicant('tFontSizeVertical', { defaultValue: 35 })
+    tfontsize_vertical_view.on('change', newValue => {
+      team1.style.fontSize = newValue+'px'
+      team2.style.fontSize = newValue+'px'
+    })
+
+    const pfontsize_view = nodecg.Replicant('pFontSize', { defaultValue: 24 })
+    pfontsize_view.on('change', newValue => {
+      player_one.style.fontSize = newValue+'px'
+      player_two.style.fontSize = newValue+'px'
+      player_three.style.fontSize = newValue+'px'
+      player_four.style.fontSize = newValue+'px'
+      player_five.style.fontSize = newValue+'px'
+      player_six.style.fontSize = newValue+'px'
+      player_seven.style.fontSize = newValue+'px'
+      player_eight.style.fontSize = newValue+'px'
+    })
+
+    const backboard = nodecg.Replicant('backboard', { defaultValue: 'xkai' })
+    backboard.on('change', newValue => {
+      switch (newValue) {
+        case 'xkai':
+          board.style.backgroundImage = "url('./img/xkai_backboard_vertical.png')";
+          break;
+        case 'orange_blue':
+          board.style.backgroundImage = "url('./img/orange_blue_backboard_vertical.png')";
+          break;
+        case 'no_backboard':
+          board.style.backgroundImage = "";
+          break;
+        default:
+          board.style.backgroundImage = "";
+          break;
+      }
+    })
+  </script>
+</html>

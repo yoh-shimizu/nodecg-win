@@ -1,0 +1,218 @@
+body {
+	margin:0px;
+	background-color: rgba(0, 0, 0, 0);
+	color:#FFFFFF;
+}
+
+#board {
+	position:absolute;
+	top:0px;
+	left:0px;
+	width:1280px;
+	height:720px;
+}
+
+#no-board {
+	position:absolute;
+	top:0px;
+	left:0px;
+	width:1280px;
+	height:720px;
+}
+
+@font-face {
+	font-family: 'RocknRollOne';
+	src: url('../fonts/RocknRoll_One/RocknRollOne-Regular.ttf');
+}
+
+
+#round {
+	position:absolute;
+	left: 362px;
+	top: 5px;
+	width: 551px;
+	height: 38px;
+	line-height: 38px;
+	font-family: 'RocknRollOne';
+	font-size: 28px;
+	text-align: center;
+	text-shadow: -1px -1px 0px #00224e;
+	letter-spacing: 0.05em;
+}
+
+#round_vertical {
+	position:absolute;
+	left: 112px;
+	top: 5px;
+	width: 1054px;
+	height: 38px;
+	line-height: 38px;
+	font-family: 'RocknRollOne';
+	font-size: 28px;
+	text-align: center;
+	text-shadow: -1px -1px 0px #00224e;
+	letter-spacing: 0.05em;
+}
+
+.score {
+	position:absolute;
+	top: 638px;
+	width: 73px;
+	height: 73px;
+	line-height: 73px;
+	font-family: 'RocknRollOne';
+	font-size: 75px;
+	text-align: center;
+	text-shadow:
+		0px 4px 2px #00224e,
+		1px 0px 2px #00224e,
+		-1px 0px 2px #00224e;
+	letter-spacing: 0.05em;
+}
+
+#team1_score {
+	left: 13px;
+}
+
+#team2_score {
+	left: 1197px;
+}
+
+.team-name {
+	position:absolute;
+	top: 5px;
+	width: 551px;
+	height: 38px;
+	line-height: 38px;
+	font-family: 'RocknRollOne';
+	font-size: 28px;
+	text-shadow: 
+		1px  1px 4px #000931,
+		1px -1px 4px #000931,
+		-1px  1px 4px #000931,
+		-1px -1px 4px #000931;
+	letter-spacing: 0.05em;
+}
+
+.team-name-vertical {
+    -webkit-writing-mode: vertical-rl;
+    -ms-writing-mode: tb-rl;
+        writing-mode: vertical-rl;
+
+	position:absolute;
+	top: 30px;
+	width: 69px;
+	height: 609px;
+	line-height: 69px;
+	font-family: 'RocknRollOne';
+	font-size: 35px;
+	text-align: left;
+	text-shadow: 
+		1px  1px 4px #000931,
+		1px -1px 4px #000931,
+		-1px  1px 4px #000931,
+		-1px -1px 4px #000931;
+	letter-spacing: 0.01em;
+}
+
+.orange-color {
+	color: #ffdfb8;
+}
+
+.blue-color {
+	color: #efeaff;
+}
+
+#team1_name {
+	left: 14px;
+	text-align: start;
+	text-shadow: 1px -4px 4px #011f5f;
+}
+
+#team1_name_vertical {
+	left: 14px;
+	text-shadow: 1px -4px 4px #011f5f;
+}
+
+#team2_name {
+	left: 718px;
+	text-align: end;
+	text-shadow: 1px -4px 4px #011f5f;
+}
+
+#team2_name_vertical {
+	left: 1198px;
+	text-shadow: 1px -4px 4px #011f5f;
+}
+
+.orange-player-name {
+	position:absolute;
+	width: 205px;
+	height: 57px;
+	line-height: 28px;
+	font-family: 'RocknRollOne';
+	font-size: 24px;
+	text-align: center;
+	text-shadow: 
+		 1px  1px 4px #311d00,
+		 1px -1px 4px #311d00,
+		-1px  1px 4px #311d00,
+		-1px -1px 4px #311d00;
+	letter-spacing: 0.05em;
+}
+
+#player_one {
+	left: 126px;
+	top: 657px;
+}
+
+#player_two {
+	left: 332px;
+	top: 657px;
+}
+
+#player_three {
+	left: 126px;
+	top: 686px;
+}
+
+#player_four {
+	left: 332px;
+	top: 686px;
+}
+
+.blue-player-name {
+	position:absolute;
+	width: 205px;
+	height: 57px;
+	line-height: 28px;
+	font-family: 'RocknRollOne';
+	font-size: 24px;
+	text-align: center;
+	text-shadow: 
+		 1px  1px 4px #000931,
+		 1px -1px 4px #000931,
+		-1px  1px 4px #000931,
+		-1px -1px 4px #000931;
+	letter-spacing: 0.05em;
+}
+
+#player_five {
+	left: 746px;
+	top: 657px;
+}
+
+#player_six {
+	left: 952px;
+	top: 657px;
+}
+
+#player_seven {
+	left: 746px;
+	top: 686px;
+}
+
+#player_eight {
+	left: 952px;
+	top: 686px;
+}

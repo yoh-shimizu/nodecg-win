@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <style>
+        * {
+            font-size: 20px;
+        }
+
+        .team,
+        .member {
+            width: 300px;
+        }
+
+        .content {
+            margin-bottom: 10px
+        }
+
+        .countview {
+            width: 50px;
+        }
+
+        .fontSize {
+            width: 30px;
+        }
+
+        .container {
+            display: flex;
+        }
+
+        .container>div {
+            width: 50%;
+        }
+    </style>
+</head>
+
+        <body>
+            <div id="folder">
+                <div class="content">
+                    <label>バックボード</label>
+                    <select name="backboard" id="backboard-select">
+                        <option value="xkai">X-KAI</option>
+                        <option value="orange_blue">オレンジ・ブルー</option>
+                        <option value="no_backboard">バックボードなし</option>
+                    </select>
+                    <br>
+                </div>
+                <hr>
+                <div class="content">
+                    <label>タイトル</label>
+                    <input class="team" id="titleform" placeholder="BO5" type="text">
+                    <br>
+                    <input class="fontSize" id="titleFontSize" readonly type="text">
+                    <label>px</label>
+                    <button id="titlefsinc">+1</button>
+                    <button id="titlefsdec">-1</button>
+                    <label>デフォルト：28px</label>
+                </div>
+
+                <hr>
+                <div class="container">
+                    <div>
+                        <label>TEAM1</label>
+                        <br>
+                        <input class="team" id="team1" placeholder="アルファチーム" type="text">
+
+                        <input class="countview" id="p1count" readonly type="text">
+                        <button id="p1inc">+1</button>
+                        <button id="p1dec">-1</button>
+                        <br>
+                        <label>縦書き</label>
+                        <input class="fontSize" id="teamFontSizeVertical" readonly type="text">
+                        <label>px</label>
+                        <button id="tfsvinc">+1</button>
+                        <button id="tfsvdec">-1</button>
+                        <label>デフォルト：35px</label>
+                        <br>
+                        <label>横書き</label>
+                        <input class="fontSize" id="teamFontSize" readonly type="text">
+                        <label>px</label>
+                        <button id="tfsinc">+1</button>
+                        <button id="tfsdec">-1</button>
+                        <label>デフォルト：28px</label>
+                        <br>
+                    </div>
+                    <div>
+                        <label>TEAM2</label>
+                        <br>
+                        <input class="team" id="team2" placeholder="ブラボーチーム" type="text">
+
+                        <input class="countview" id="p2count" readonly type="text">
+                        <button id="p2inc">+1</button>
+                        <button id="p2dec">-1</button>
+                        <br>
+                    </div>
+                </div>
+
+                <hr>
+
+                <div class="container">
+                    <div>
+                        <label>TEAM1_P1</label>
+                        <br>
+                        <input class="team" id="player1" placeholder="プレイヤー1" type="text">
+                        <br>
+
+                        <label>TEAM1_P2</label>
+                        <br>
+                        <input class="team" id="player2" placeholder="プレイヤー2" type="text">
+                        <br>
+
+                        <label>TEAM1_P3</label>
+                        <br>
+                        <input class="team" id="player3" placeholder="プレイヤー3" type="text">
+                        <br>
+
+                        <label>TEAM1_P4</label>
+                        <br>
+                        <input class="team" id="player4" placeholder="プレイヤー4" type="text">
+                        <br>
+                    </div>
+
+                    <div>
+                        <label>TEAM2_P1</label>
+                        <br>
+                        <input class="team" id="player5" placeholder="プレイヤー5" type="text">
+                        <br>
+
+                        <label>TEAM2_P2</label>
+                        <br>
+                        <input class="team" id="player6" placeholder="プレイヤー6" type="text">
+                        <br>
+
+                        <label>TEAM2_P3</label>
+                        <br>
+                        <input class="team" id="player7" placeholder="プレイヤー7" type="text">
+                        <br>
+
+                        <label>TEAM2_P4</label>
+                        <br>
+                        <input class="team" id="player8" placeholder="プレイヤー8" type="text">
+                        <br>
+                    </div>
+                </div>
+                <input class="fontSize" id="playerFontSize" readonly type="text">
+                <label>px</label>
+                <button id="pfsinc">+1</button>
+                <button id="pfsdec">-1</button>
+                <label>デフォルト：24px</label>
+            </div>
+            <div id="folder">
+                <div class="content">
+
+                    <button id="submitButton">タイトル・名前反映</button>
+                    <br>
+                    <button id="clearButton">クリア</button>
+                    <br>
+                    <label>TEAM1エントリーナンバー</label>
+                    <input class="countview" id="t1entryNumber" type="text">
+                    <br>
+                    <label>TEAM2エントリーナンバー</label>
+                    <input class="countview" id="t2entryNumber" type="text">
+                    <br>
+                    <button id="loadButton">CSV読み込み</button>
+
+                </div>
+
+            </div>
+
+        </body>
+        <script>
+
+    const backboard = document.getElementById("backboard-select");
+    const backboardRep = nodecg.Replicant("backboard", { defaultValue: "xkai" });
+
+    const titleform = document.getElementById("titleform");
+    const titleRep = nodecg.Replicant("title", { defaultValue: "" });
+
+    const team1 = document.getElementById("team1");
+    const team2 = document.getElementById("team2");
+
+    const player1 = document.getElementById("player1");
+    const player2 = document.getElementById("player2");
+    const player3 = document.getElementById("player3");
+    const player4 = document.getElementById("player4");
+    const player5 = document.getElementById("player5");
+    const player6 = document.getElementById("player6");
+    const player7 = document.getElementById("player7");
+    const player8 = document.getElementById("player8");
+
+    const t1Rep = nodecg.Replicant("t1name", { defaultValue: "" });
+    const t2Rep = nodecg.Replicant("t2name", { defaultValue: "" });
+
+    const p1Rep = nodecg.Replicant("p1name", { defaultValue: "" });
+    const p2Rep = nodecg.Replicant("p2name", { defaultValue: "" });
+    const p3Rep = nodecg.Replicant("p3name", { defaultValue: "" });
+    const p4Rep = nodecg.Replicant("p4name", { defaultValue: "" });
+    const p5Rep = nodecg.Replicant("p5name", { defaultValue: "" });
+    const p6Rep = nodecg.Replicant("p6name", { defaultValue: "" });
+    const p7Rep = nodecg.Replicant("p7name", { defaultValue: "" });
+    const p8Rep = nodecg.Replicant("p8name", { defaultValue: "" });
+
+    const submitButton = document.getElementById("submitButton");
+    const clearButton = document.getElementById("clearButton");
+    const loadButton = document.getElementById("loadButton");
+
+    const p1incEl = document.getElementById('p1inc')
+    const p1decEl = document.getElementById('p1dec')
+
+    const p1countView = document.getElementById('p1count')
+    const p1countReplicant = nodecg.Replicant('count1', { defaultValue: 0 })
+
+    const p2incEl = document.getElementById('p2inc')
+    const p2decEl = document.getElementById('p2dec')
+
+    const p2countView = document.getElementById('p2count')
+    const p2countReplicant = nodecg.Replicant('count2', { defaultValue: 0 })
+
+    const t1entrytView = document.getElementById("t1entryNumber");
+    const t1entrytReplicant = nodecg.Replicant('t1entry', { defaultValue: 1 })
+
+    const t2entrytView = document.getElementById("t2entryNumber");
+    const t2entrytReplicant = nodecg.Replicant('t2entry', { defaultValue: 2 })
+
+    const redTeam = nodecg.Replicant("redTeam");
+    const whiteTeam = nodecg.Replicant("whiteTeam");
+
+    // フォントサイズ調整
+    const titleFontSizeView = document.getElementById("titleFontSize")
+    const titlefsRep = nodecg.Replicant('titlefs', { defaultValue: 28 })
+
+    const titlefsincEl = document.getElementById('titlefsinc')
+    const titlefsdecEl = document.getElementById('titlefsdec')
+
+    const teamFontSizeVerticalView = document.getElementById("teamFontSizeVertical")
+    const tFontSizeVerticalRep = nodecg.Replicant('tFontSizeVertical', { defaultValue: 35 })
+
+    const tfsvincEl = document.getElementById('tfsvinc')
+    const tfsvdecEl = document.getElementById('tfsvdec')
+
+    const teamFontSizeView = document.getElementById("teamFontSize")
+    const tFontSizeRep = nodecg.Replicant('tFontSize', { defaultValue: 28 })
+
+    const tfsincEl = document.getElementById('tfsinc')
+    const tfsdecEl = document.getElementById('tfsdec')
+
+    const playerFontSizeView = document.getElementById("playerFontSize")
+    const pFontSizeRep = nodecg.Replicant('pFontSize', { defaultValue: 24 })
+
+    const pfsincEl = document.getElementById('pfsinc')
+    const pfsdecEl = document.getElementById('pfsdec')
+
+    NodeCG.waitForReplicants(
+        backboardRep, titleRep, t1Rep, t2Rep, p1Rep, p2Rep, p3Rep, p4Rep, p5Rep, p6Rep, p7Rep, p8Rep, p1countReplicant, p2countReplicant, t1entrytReplicant, t2entrytReplicant,
+        titlefsRep, tFontSizeVerticalRep, tFontSizeRep, pFontSizeRep
+        ).then(() => {
+
+        nodecg.readReplicant('backboard', value => {
+            backboard.value = value;
+        });
+
+        nodecg.readReplicant('title', value => {
+            titleform.value = value;
+        });
+
+        nodecg.readReplicant('t1name', value => {
+            team1.value = value;
+        });
+
+        nodecg.readReplicant('t2name', value => {
+            team2.value = value;
+        });
+
+        nodecg.readReplicant('p1name', value => {
+            player1.value = value;
+        });
+
+        nodecg.readReplicant('p2name', value => {
+            player2.value = value;
+        });
+
+        nodecg.readReplicant('p3name', value => {
+            player3.value = value;
+        });
+
+        nodecg.readReplicant('p4name', value => {
+            player4.value = value;
+        });
+
+        nodecg.readReplicant('p5name', value => {
+            player5.value = value;
+        });
+
+        nodecg.readReplicant('p6name', value => {
+            player6.value = value;
+        });
+
+        nodecg.readReplicant('p7name', value => {
+            player7.value = value;
+        });
+
+        nodecg.readReplicant('p8name', value => {
+            player8.value = value;
+        });
+
+        nodecg.readReplicant('count1', value => {
+            p1countView.value = value;
+        });
+
+        nodecg.readReplicant('count2', value => {
+            p2countView.value = value;
+        });
+
+        nodecg.readReplicant('t1entry', value => {
+            t1entrytView.value = value;
+        });
+
+        nodecg.readReplicant('t2entry', value => {
+            t2entrytView.value = value;
+        });
+
+        nodecg.readReplicant('titlefs', value => {
+            titleFontSizeView.value = value;
+        });
+
+        nodecg.readReplicant('tFontSizeVertical', value => {
+            teamFontSizeVerticalView.value = value;
+        });
+
+        nodecg.readReplicant('tFontSize', value => {
+            teamFontSizeView.value = value;
+        });
+
+        nodecg.readReplicant('pFontSize', value => {
+            playerFontSizeView.value = value;
+        });
+
+    });
+
+    backboard.addEventListener('change', () => {
+         backboardRep.value = backboard.value
+    })
+
+
+    p1incEl.addEventListener('click', () => {
+        p1countView.value = p1countReplicant.value += 1
+    })
+
+    p1decEl.addEventListener('click', () => {
+        if (p1countReplicant.value > 0) {
+            p1countView.value = p1countReplicant.value -= 1
+        }
+    })
+
+    p2incEl.addEventListener('click', () => {
+        p2countView.value = p2countReplicant.value += 1
+    })
+
+    p2decEl.addEventListener('click', () => {
+        if (p2countReplicant.value > 0) {
+            p2countView.value = p2countReplicant.value -= 1
+        }
+    })
+
+    titlefsincEl.addEventListener('click', () => {
+        titleFontSizeView.value = titlefsRep.value += 1
+    })
+
+    titlefsdecEl.addEventListener('click', () => {
+        if (titlefsRep.value > 1) {
+            titleFontSizeView.value = titlefsRep.value -= 1
+        }
+    })
+
+    tfsvincEl.addEventListener('click', () => {
+        teamFontSizeVerticalView.value = tFontSizeVerticalRep.value += 1
+    })
+
+    tfsvdecEl.addEventListener('click', () => {
+        if (tFontSizeVerticalRep.value > 1) {
+            teamFontSizeVerticalView.value = tFontSizeVerticalRep.value -= 1
+        }
+    })
+
+    tfsincEl.addEventListener('click', () => {
+        teamFontSizeView.value = tFontSizeRep.value += 1
+    })
+
+    tfsdecEl.addEventListener('click', () => {
+        if (tFontSizeRep.value > 1) {
+            teamFontSizeView.value = tFontSizeRep.value -= 1
+        }
+    })
+
+    pfsincEl.addEventListener('click', () => {
+        playerFontSizeView.value = pFontSizeRep.value += 1
+    })
+
+    pfsdecEl.addEventListener('click', () => {
+        if (pFontSizeRep.value > 1) {
+            playerFontSizeView.value = pFontSizeRep.value -= 1
+        }
+    })
+
+    loadButton.addEventListener('click', () => {
+        var req = new XMLHttpRequest(); // HTTPでファイルを読み込むためのXMLHttpRrequestオブジェクトを生成
+        req.open("get", "entry.csv", true); // アクセスするファイルを指定
+        req.onload = () => {
+            const t1arrayNum = t1entrytView.value - 1;
+            const t2arrayNum = t2entrytView.value - 1;
+
+            // csvを配列に格納
+            var csvArr = [];
+            var lines = req.responseText.split("\n");
+            for (var i = 0; i < lines.length; ++i) {
+                var cells = lines[i].split(",");
+                if (cells.length != 1) {
+                    csvArr.push(cells);
+                }
+            };
+            var t1array = csvArr[t1arrayNum];
+            var t2array = csvArr[t2arrayNum];
+
+            // チーム名、メンバー名代入
+            team1.value = t1array[0];
+            player1.value = t1array[1];
+            player2.value = t1array[2];
+            player3.value = t1array[3];
+            player4.value = t1array[4];
+            team2.value = t2array[0];
+            player5.value = t2array[1];
+            player6.value = t2array[2];
+            player7.value = t2array[3];
+            player8.value = t2array[4];
+        };
+        req.send(null); // HTTPリクエストの発行
+    })
+
+    submitButton.onclick = () => {
+        titleRep.value = titleform.value;
+        t1Rep.value = team1.value;
+        t2Rep.value = team2.value;
+        p1Rep.value = player1.value;
+        p2Rep.value = player2.value;
+        p3Rep.value = player3.value;
+        p4Rep.value = player4.value;
+        p5Rep.value = player5.value;
+        p6Rep.value = player6.value;
+        p7Rep.value = player7.value;
+        p8Rep.value = player8.value;
+    }
+
+    clearButton.onclick = () => {
+        t1Rep.value = team1.value = "";
+        t2Rep.value = team2.value = "";
+        p1Rep.value = player1.value = "";
+        p2Rep.value = player2.value = "";
+        p3Rep.value = player3.value = "";
+        p4Rep.value = player4.value = "";
+        p5Rep.value = player5.value = "";
+        p6Rep.value = player6.value = "";
+        p7Rep.value = player7.value = "";
+        p8Rep.value = player8.value = "";
+        p1countView.value = p1countReplicant.value = 0;
+        p2countView.value = p2countReplicant.value = 0;
+    }
+
+</script>
+
+</html>

@@ -1,0 +1,35 @@
+{
+  "name": "splatoon-layout",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "author": "",
+  "license": "MIT",
+	"dependencies": {
+    "googleapis": "^47.0.0",
+    "lodash": "^4.17.15"
+  },
+  "nodecg": {
+      "compatibleRange": "^1.0.0",
+      "dashboardPanels": [
+        {
+          "width": "8",
+          "name": "splatoon",
+          "title": "スプラトゥーンスコアボード",
+          "file": "splatoon.html"
+        }
+      ],
+      "graphics": [
+        {
+          "file": "splatoon_scoreboard.html",
+          "width": 1280,
+          "height": 720
+        },
+        {
+          "file": "splatoon_scoreboard_vertical.html",
+          "width": 1280,
+          "height": 720
+        }
+      ]
+    }
+  }
