@@ -130,11 +130,11 @@
       player_eight.style.fontSize = newValue+'px'
     })
 
-    const backboard = nodecg.Replicant('backboard', { defaultValue: 'xkai' })
+    const backboard = nodecg.Replicant('backboard', { defaultValue: 'yellow_skyblue' })
     backboard.on('change', newValue => {
       switch (newValue) {
-        case 'xkai':
-          board.style.backgroundImage = "url('./img/xkai_backboard_vertical.png')";
+        case 'yellow_skyblue':
+          board.style.backgroundImage = "url('./img/yellow_skyblue_backboard_vertical.png')";
           break;
         case 'orange_blue':
           board.style.backgroundImage = "url('./img/orange_blue_backboard_vertical.png')";
