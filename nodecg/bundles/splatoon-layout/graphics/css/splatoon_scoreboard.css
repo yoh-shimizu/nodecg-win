@@ -71,11 +71,15 @@ body {
 }
 
 #team1_score {
-	left: 13px;
+	left: 20px;
+    display: flex;
+    justify-content: center;
 }
 
 #team2_score {
-	left: 1197px;
+	left: 1190px;
+    display: flex;
+    justify-content: center;
 }
 
 .team-name {
