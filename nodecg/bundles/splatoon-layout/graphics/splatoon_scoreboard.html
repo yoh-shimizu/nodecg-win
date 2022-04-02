@@ -27,83 +27,100 @@
     
   <script>
 
+    function animateInfo(info) {
+      info.animate([{opacity: '0'}, {opacity: '1'}], 500)
+    };
+
     const board = document.getElementById("board");
 
     const round = document.getElementById("round");
     const roundView = nodecg.Replicant("title");
     roundView.on("change", newValue => {
+      animateInfo(round);
       round.innerText = newValue;
     });
 
     const team1 = document.getElementById("team1_name");
     const t1nameView = nodecg.Replicant("t1name");
     t1nameView.on("change", newValue => {
+      animateInfo(team1);
       team1.innerText = newValue;
     });
 
     const team2 = document.getElementById("team2_name");
     const t2nameView = nodecg.Replicant("t2name");
     t2nameView.on("change", newValue => {
+      animateInfo(team2);
       team2.innerText = newValue;
     });
 
     const player_one = document.getElementById("player_one");
     const p1nameView = nodecg.Replicant("p1name");
     p1nameView.on("change", newValue => {
+      animateInfo(player_one);
       player_one.innerText = newValue;
     });
   
     const player_two = document.getElementById("player_two");
     const p2nameView = nodecg.Replicant("p2name");
     p2nameView.on("change", newValue => {
+      animateInfo(player_two);
       player_two.innerText = newValue;
     });
 
     const player_three = document.getElementById("player_three");
     const p3nameView = nodecg.Replicant("p3name");
     p3nameView.on("change", newValue => {
+      animateInfo(player_three);
       player_three.innerText = newValue;
     });
 
     const player_four = document.getElementById("player_four");
     const p4nameView = nodecg.Replicant("p4name");
     p4nameView.on("change", newValue => {
+      animateInfo(player_four);
       player_four.innerText = newValue;
     });
 
     const player_five = document.getElementById("player_five");
     const p5nameView = nodecg.Replicant("p5name");
     p5nameView.on("change", newValue => {
+      animateInfo(player_five);
       player_five.innerText = newValue;
     });
 
     const player_six = document.getElementById("player_six");
     const p6nameView = nodecg.Replicant("p6name");
     p6nameView.on("change", newValue => {
+      animateInfo(player_six);
       player_six.innerText = newValue;
     });
 
     const player_seven = document.getElementById("player_seven");
     const p7nameView = nodecg.Replicant("p7name");
     p7nameView.on("change", newValue => {
+      animateInfo(player_seven);
       player_seven.innerText = newValue;
     });
 
     const player_eight = document.getElementById("player_eight");
     const p8nameView = nodecg.Replicant("p8name");
     p8nameView.on("change", newValue => {
+      animateInfo(player_eight);
       player_eight.innerText = newValue;
     });
   
     const team1_score = document.getElementById('team1_score')
     const count1_view = nodecg.Replicant('count1', { defaultValue: 0 })
     count1_view.on('change', newValue => {
+      animateInfo(team1_score);
       team1_score.innerText = newValue
     })
   
     const team2_score = document.getElementById('team2_score')
     const count2_view = nodecg.Replicant('count2', { defaultValue: 0 })
     count2_view.on('change', newValue => {
+      animateInfo(team2_score);
       team2_score.innerText = newValue
     })
 
