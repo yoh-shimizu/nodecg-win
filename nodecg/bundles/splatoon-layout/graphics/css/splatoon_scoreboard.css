@@ -8,16 +8,16 @@ body {
 	position:absolute;
 	top:0px;
 	left:0px;
-	width:1280px;
-	height:720px;
+	width:1920px;
+	height:1080px;
 }
 
 #no-board {
 	position:absolute;
 	top:0px;
 	left:0px;
-	width:1280px;
-	height:720px;
+	width:1920px;
+	height:1080px;
 }
 
 @font-face {
@@ -28,13 +28,13 @@ body {
 
 #round {
 	position:absolute;
-	left: 362px;
-	top: 5px;
-	width: 551px;
-	height: 38px;
-	line-height: 38px;
+	left: 543px;
+	top: 8px;
+	width: 827px;
+	height: 57px;
+	line-height: 57px;
 	font-family: 'RocknRollOne';
-	font-size: 28px;
+	font-size: 42px;
 	text-align: center;
 	text-shadow: -1px -1px 0px #00224e;
 	letter-spacing: 0.05em;
@@ -42,13 +42,13 @@ body {
 
 #round_vertical {
 	position:absolute;
-	left: 112px;
-	top: 5px;
-	width: 1054px;
-	height: 38px;
-	line-height: 38px;
+	left: 171px;
+	top: 8px;
+	width: 1581px;
+	height: 58px;
+	line-height: 58px;
 	font-family: 'RocknRollOne';
-	font-size: 28px;
+	font-size: 42px;
 	text-align: center;
 	text-shadow: -1px -1px 0px #00224e;
 	letter-spacing: 0.05em;
@@ -56,12 +56,12 @@ body {
 
 .score {
 	position:absolute;
-	top: 638px;
-	width: 73px;
-	height: 73px;
-	line-height: 73px;
+	top: 957px;
+	width: 110px;
+	height: 110px;
+	line-height: 110px;
 	font-family: 'RocknRollOne';
-	font-size: 75px;
+	font-size: 113px;
 	text-align: center;
 	text-shadow:
 		0px 4px 2px #00224e,
@@ -71,25 +71,25 @@ body {
 }
 
 #team1_score {
-	left: 20px;
+	left: 30px;
     display: flex;
     justify-content: center;
 }
 
 #team2_score {
-	left: 1190px;
+	left: 1785px;
     display: flex;
     justify-content: center;
 }
 
 .team-name {
 	position:absolute;
-	top: 5px;
-	width: 551px;
-	height: 38px;
-	line-height: 38px;
+	top: 8px;
+	width: 827px;
+	height: 57px;
+	line-height: 57px;
 	font-family: 'RocknRollOne';
-	font-size: 28px;
+	font-size: 42px;
 	text-shadow: 
 		1px  1px 4px #000931,
 		1px -1px 4px #000931,
@@ -104,12 +104,12 @@ body {
         writing-mode: vertical-rl;
 
 	position:absolute;
-	top: 30px;
-	width: 69px;
-	height: 609px;
-	line-height: 69px;
+	top: 45px;
+	width: 104px;
+	height: 914px;
+	line-height: 104px;
 	font-family: 'RocknRollOne';
-	font-size: 35px;
+	font-size: 53px;
 	text-align: left;
 	text-shadow: 
 		1px  1px 4px #000931,
@@ -128,34 +128,34 @@ body {
 }
 
 #team1_name {
-	left: 14px;
+	left: 21px;
 	text-align: start;
 	text-shadow: 1px -4px 4px #011f5f;
 }
 
 #team1_name_vertical {
-	left: 14px;
+	left: 30px;
 	text-shadow: 1px -4px 4px #011f5f;
 }
 
 #team2_name {
-	left: 718px;
+	left: 1077px;
 	text-align: end;
 	text-shadow: 1px -4px 4px #011f5f;
 }
 
 #team2_name_vertical {
-	left: 1198px;
+	left: 1790px;
 	text-shadow: 1px -4px 4px #011f5f;
 }
 
 .orange-player-name {
 	position:absolute;
-	width: 205px;
-	height: 57px;
-	line-height: 28px;
+	width: 308px;
+	height: 86px;
+	line-height: 42px;
 	font-family: 'RocknRollOne';
-	font-size: 24px;
+	font-size: 36px;
 	text-align: center;
 	text-shadow: 
 		 1px  1px 4px #311d00,
@@ -166,32 +166,32 @@ body {
 }
 
 #player_one {
-	left: 126px;
-	top: 657px;
+	left: 189px;
+	top: 986px;
 }
 
 #player_two {
-	left: 332px;
-	top: 657px;
+	left: 498px;
+	top: 986px;
 }
 
 #player_three {
-	left: 126px;
-	top: 686px;
+	left: 189px;
+	top: 1029px;
 }
 
 #player_four {
-	left: 332px;
-	top: 686px;
+	left: 498px;
+	top: 1029px;
 }
 
 .blue-player-name {
 	position:absolute;
-	width: 205px;
-	height: 57px;
-	line-height: 28px;
+	width: 308px;
+	height: 86px;
+	line-height: 42px;
 	font-family: 'RocknRollOne';
-	font-size: 24px;
+	font-size: 36px;
 	text-align: center;
 	text-shadow: 
 		 1px  1px 4px #000931,
@@ -202,21 +202,21 @@ body {
 }
 
 #player_five {
-	left: 746px;
-	top: 657px;
+	left: 1115px;
+	top: 986px;
 }
 
 #player_six {
-	left: 952px;
-	top: 657px;
+	left: 1424px;
+	top: 986px;
 }
 
 #player_seven {
-	left: 746px;
-	top: 686px;
+	left: 1115px;
+	top: 1029px;
 }
 
 #player_eight {
-	left: 952px;
-	top: 686px;
+	left: 1424px;
+	top: 1029px;
 }
