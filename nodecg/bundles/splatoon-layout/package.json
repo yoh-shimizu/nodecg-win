@@ -22,13 +22,13 @@
       "graphics": [
         {
           "file": "splatoon_scoreboard.html",
-          "width": 1280,
-          "height": 720
+          "width": 1920,
+          "height": 1080
         },
         {
           "file": "splatoon_scoreboard_vertical.html",
-          "width": 1280,
-          "height": 720
+          "width": 1920,
+          "height": 1080
         }
       ]
     }
