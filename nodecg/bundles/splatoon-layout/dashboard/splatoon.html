@@ -8,7 +8,13 @@
             font-size: 20px;
         }
 
-        .team,
+        .title {
+            width: 600px;
+        }
+
+        .team {
+            width: 450px;
+        }
         .member {
             width: 300px;
         }
@@ -47,9 +53,28 @@
                     <br>
                 </div>
                 <hr>
+                <label>スコア</label>
+                <div class="container">
+                    <div>
+                        <label>TEAM1</label>
+                        <input class="countview" id="p1count" readonly type="text">
+                        <button id="p1inc">+1</button>
+                        <button id="p1dec">-1</button>
+                    </div>
+                    <div>
+                        <label>TEAM2</label>
+                        <input class="countview" id="p2count" readonly type="text">
+                        <button id="p2inc">+1</button>
+                        <button id="p2dec">-1</button>
+                    </div>
+                </div>
+
+                <hr>
+
                 <div class="content">
                     <label>タイトル</label>
-                    <input class="team" id="titleform" placeholder="BO5" type="text">
+                    <br>
+                    <input class="title" id="titleform" placeholder="BO5" type="text">
                     <br>
                     <input class="fontSize" id="titleFontSize" readonly type="text">
                     <label>px</label>
@@ -58,16 +83,13 @@
                     <label>デフォルト：42px</label>
                 </div>
 
-                <hr>
+                <hr size="1" style="border-style:dashed">
+
                 <div class="container">
                     <div>
                         <label>TEAM1</label>
                         <br>
                         <input class="team" id="team1" placeholder="アルファチーム" type="text">
-
-                        <input class="countview" id="p1count" readonly type="text">
-                        <button id="p1inc">+1</button>
-                        <button id="p1dec">-1</button>
                         <br>
                         <label>縦書き</label>
                         <input class="fontSize" id="teamFontSizeVertical" readonly type="text">
@@ -88,58 +110,59 @@
                         <label>TEAM2</label>
                         <br>
                         <input class="team" id="team2" placeholder="ブラボーチーム" type="text">
-
-                        <input class="countview" id="p2count" readonly type="text">
-                        <button id="p2inc">+1</button>
-                        <button id="p2dec">-1</button>
                         <br>
                     </div>
                 </div>
-
-                <hr>
 
                 <div class="container">
                     <div>
                         <label>TEAM1_P1</label>
                         <br>
-                        <input class="team" id="player1" placeholder="プレイヤー1" type="text">
+                        <input class="member" id="player1" placeholder="プレイヤー1" type="text">
                         <br>
 
                         <label>TEAM1_P2</label>
                         <br>
-                        <input class="team" id="player2" placeholder="プレイヤー2" type="text">
+                        <input class="member" id="player2" placeholder="プレイヤー2" type="text">
                         <br>
 
                         <label>TEAM1_P3</label>
                         <br>
-                        <input class="team" id="player3" placeholder="プレイヤー3" type="text">
+                        <input class="member" id="player3" placeholder="プレイヤー3" type="text">
                         <br>
 
                         <label>TEAM1_P4</label>
                         <br>
-                        <input class="team" id="player4" placeholder="プレイヤー4" type="text">
+                        <input class="member" id="player4" placeholder="プレイヤー4" type="text">
                         <br>
+                    </div>
+
+                    <div align="center">
+                        <br>
+                        <br>
+                        <br>
+                        <button  id="swapButton">←入れ替え→</button>
                     </div>
 
                     <div>
                         <label>TEAM2_P1</label>
                         <br>
-                        <input class="team" id="player5" placeholder="プレイヤー5" type="text">
+                        <input class="member" id="player5" placeholder="プレイヤー5" type="text">
                         <br>
 
                         <label>TEAM2_P2</label>
                         <br>
-                        <input class="team" id="player6" placeholder="プレイヤー6" type="text">
+                        <input class="member" id="player6" placeholder="プレイヤー6" type="text">
                         <br>
 
                         <label>TEAM2_P3</label>
                         <br>
-                        <input class="team" id="player7" placeholder="プレイヤー7" type="text">
+                        <input class="member" id="player7" placeholder="プレイヤー7" type="text">
                         <br>
 
                         <label>TEAM2_P4</label>
                         <br>
-                        <input class="team" id="player8" placeholder="プレイヤー8" type="text">
+                        <input class="member" id="player8" placeholder="プレイヤー8" type="text">
                         <br>
                     </div>
                 </div>
@@ -149,23 +172,30 @@
                 <button id="pfsdec">-1</button>
                 <label>デフォルト：36px</label>
             </div>
-            <div id="folder">
+            <br>
+            <div class="container">
                 <div class="content">
-
-                    <button id="submitButton">タイトル・名前反映</button>
-                    <br>
-                    <button id="clearButton">クリア</button>
-                    <br>
-                    <label>TEAM1エントリーナンバー</label>
-                    <input class="countview" id="t1entryNumber" type="text">
-                    <br>
-                    <label>TEAM2エントリーナンバー</label>
-                    <input class="countview" id="t2entryNumber" type="text">
-                    <br>
-                    <button id="loadButton">CSV読み込み</button>
-
+                    <button style="background-color:#eaf6ff;" id="submitButton">スコアボード反映</button>     
                 </div>
+                <div class="content">
+                </div>
+                <div class="content">
+                    <button style="background-color:#ff9999;" id="clearButton">オールクリア</button>
+                </div>
+            </div>
 
+            <hr>
+
+            <div>
+                <label>エントリーファイル</label>
+                <br>
+                <label>TEAM1エントリーナンバー</label>
+                <input class="countview" id="t1entryNumber" type="text">
+                <br>
+                <label>TEAM2エントリーナンバー</label>
+                <input class="countview" id="t2entryNumber" type="text">
+                <br>
+                <button style="background-color:#BCE1CF;" id="loadButton">CSV読み込み</button>
             </div>
 
         </body>
@@ -202,6 +232,7 @@
     const p8Rep = nodecg.Replicant("p8name", { defaultValue: "" });
 
     const submitButton = document.getElementById("submitButton");
+    const swapButton = document.getElementById("swapButton");
     const clearButton = document.getElementById("clearButton");
     const loadButton = document.getElementById("loadButton");
 
@@ -449,6 +480,28 @@
         p6Rep.value = player6.value;
         p7Rep.value = player7.value;
         p8Rep.value = player8.value;
+    }
+
+    function swapInfo(infoA, infoB){
+      return [infoB, infoA]
+    }
+
+    swapButton.onclick = () => {
+        var tmp0 = swapInfo(team1.value, team2.value);
+        var tmp1 = swapInfo(player1.value, player5.value);
+        var tmp2 = swapInfo(player2.value, player6.value);
+        var tmp3 = swapInfo(player3.value, player7.value);
+        var tmp4 = swapInfo(player4.value, player8.value);
+        team1.value = tmp0[0];
+        team2.value = tmp0[1];
+        player1.value = tmp1[0];
+        player5.value = tmp1[1];
+        player2.value = tmp2[0];
+        player6.value = tmp2[1];
+        player3.value = tmp3[0];
+        player7.value = tmp3[1];
+        player4.value = tmp4[0];
+        player8.value = tmp4[1];
     }
 
     clearButton.onclick = () => {
