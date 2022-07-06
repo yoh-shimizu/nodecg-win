@@ -150,6 +150,9 @@
     const backboard = nodecg.Replicant('backboard', { defaultValue: 'yellow_skyblue' })
     backboard.on('change', newValue => {
       switch (newValue) {
+        case 'color_lock':
+          board.style.backgroundImage = "url('./img/color_lock_backboard_vertical.png')";
+          break;
         case 'yellow_skyblue':
           board.style.backgroundImage = "url('./img/yellow_skyblue_backboard_vertical.png')";
           break;

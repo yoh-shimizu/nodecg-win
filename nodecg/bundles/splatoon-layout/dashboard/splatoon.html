@@ -40,6 +40,7 @@
                 <div class="content">
                     <label>バックボード</label>
                     <select name="backboard" id="backboard-select">
+                        <option value="color_lock">色覚サポート</option>
                         <option value="yellow_skyblue">イエロー・スカイブルー</option>
                         <option value="orange_blue">オレンジ・ブルー</option>
                         <option value="no_backboard">バックボードなし</option>
@@ -172,7 +173,7 @@
         <script>
 
     const backboard = document.getElementById("backboard-select");
-    const backboardRep = nodecg.Replicant("backboard", { defaultValue: "yellow_skyblue" });
+    const backboardRep = nodecg.Replicant("backboard", { defaultValue: "color_lock" });
 
     const titleform = document.getElementById("titleform");
     const titleRep = nodecg.Replicant("title", { defaultValue: "" });
